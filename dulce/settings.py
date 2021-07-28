@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'hostels',
     'crispy_forms',
+     'star_ratings',
 ]
 
 MIDDLEWARE = [
