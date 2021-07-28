@@ -1,3 +1,4 @@
+from hostels.forms import RegistrationForm, profileForm
 from django.shortcuts import render,redirect
 
 # Create your views here.
