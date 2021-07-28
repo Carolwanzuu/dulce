@@ -1,11 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container" >
+<div class="container landing d-flex justify-content-center align-items-center">
     <div class="text-white text-center" style="margin-top:15%">
         <h1>Welcome to Dulce Dream Hostels</h1>
         <h5 style="margin-top:6%">Get Started by checking out hostels</h5>
-        <a href="#" class="btn btn-sm btn-info mt-4">View More</a>
+        <div class="separator mt-md-5 mb-md-5"></div>
+    </div>
+</div>
+<div class="container mt-md-5">
+    <div class="text-center mb-md-3">
+        <div class='d-flex justify-content-between align-items-center'>
+            <h1>Dream Hostels</h1>
+
+        </div>
+        <div class="row">
+            {% for hostel in host_items %}
+            <div class="sitecont col-md-4">
+                <div class="card">
+                    <img class="img-fluid" src="{{hostel.image.url}}" class="card-img-top" alt="">
+                    <a href="hostel/{{host.id}}"></a>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>{{hostel.name}}</h2>
+                            <hr>
+                            <p>{{hostel.description}}</p>
+                        </div>
+                        <hr>
+                        <div class="card-text">
+                            <a href="hostel/{{hostel.id}}">View More</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+
+        </div>
     </div>
 
 </div>

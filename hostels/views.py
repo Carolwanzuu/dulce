@@ -1,9 +1,11 @@
+from hostels.models import Hostels
 from hostels.forms import RegistrationForm, profileForm
 from django.shortcuts import render,redirect
 
 # Create your views here.
-def hostel_list(request):
-    return render(request, 'index.html' )
+def home(request):
+    host_items=Hostels.objects.all()
+    return render(request, 'index.html', {'host_items':host_items})
 
 def register(request):
     if request.method=="POST":
@@ -26,3 +28,7 @@ def register(request):
         'profForm': prof
     }
     return render(request, 'registration/signup.html', params)
+
+def hostels(request, id):
+    host = Hostels.objects.get(id=id)
+    return render(request,'hostel.html',{'hostels':host})
