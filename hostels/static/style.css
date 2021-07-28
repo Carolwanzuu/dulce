@@ -1,0 +1,40 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+.form-text, .asteriskField{
+    display:none;
+}
+.nav-img{
+    height: 30px;
+    width: 30px;
+}
+.col-form-label {
+    font-weight: bold;
+}
+.navbar {
+    padding: 20px 10px;
+    background-color: #35495e;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    padding-right:10px;
+    background: #1a3e59;
+    color: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s;
+}
