@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{%load bootstrap3%}
+
 {%block content%}
 <div class="container" style="font-family: 'Jost', sans-serif;">
     <div class="row mt-5" style="padding-top: 80px;">
@@ -10,8 +10,7 @@
                     {%csrf_token%}
                     <fieldset class="form-group">
                         <legend class="border-bottom pt-4 mb-4">Profile</legend>
-                        {%bootstrap_form p_form%}
-                        {%bootstrap_form u_form%}
+                       
                     </fieldset>
                     <div class="form-group">
                         <button class="btn btn-outline-info" type="submit">Update Profile</button>

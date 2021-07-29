@@ -25,3 +25,8 @@ class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['bio', 'profilePic', 'contact']
+
+class HostelForm(forms.ModelForm):
+    class Meta:
+        model = Hostels
+        exclude = ('name','location','price')
