@@ -41,7 +41,7 @@
                     {%csrf_token%}
                     <fieldset class="form-group">
                         <img class="rounded-circle account-img d-block mx-auto img-fluid"
-                            src="{{user.Profile.profile_picture.url}}">
+                            src="{{user.profilePic.url}}">
                         <h5 class="text-center mt-3">Username: {{user.username}}</h5>
 
                         <p class="text-center">Bio:{{user.profile.bio}}</p>
@@ -57,7 +57,7 @@
                     <br>
                     <hr>
                     <div>
-                        <a href="{% url 'book_hostel' %}">
+                        <a href="{% url 'book' %}">
                             <button class="btn btn-outline-info text-center" type="submit">Book A Hostel</button>
                         </a>
                     </div>

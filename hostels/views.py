@@ -62,7 +62,7 @@ def book_hostel(request):
             hood = form.save(commit=False)
             hood.admin = request.user.profile
             hood.save()
-            return redirect('hood')
+            return redirect('hostel')
     else:
         form = HostelForm()
-    return render(request, 'book.html', {'form': form})
+        return render(request, 'book.html', {'form': form})
