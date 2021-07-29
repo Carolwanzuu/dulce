@@ -1,5 +1,5 @@
 from hostels.models import Hostels
-from hostels.forms import RegistrationForm, profileForm
+from hostels.forms import RegistrationForm, UpdateProfileForm, UserUpdateForm, profileForm
 from django.shortcuts import render,redirect
 
 # Create your views here.
@@ -32,3 +32,25 @@ def register(request):
 def hostels(request, id):
     host = Hostels.objects.get(id=id)
     return render(request,'hostel.html',{'hostels':host})
+
+def profile(request):
+    
+    return render(request, 'profile.html')
+
+def edit_Profile(request):
+    user= request.user
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            return redirect('profile', user.id)
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = UpdateProfileForm()
+    context = {
+        'u_form': u_form,
+        'p_form': p_form
+    }
+    return render(request, 'editProfile.html', context)

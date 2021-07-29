@@ -1,53 +1,85 @@
-<div class="class" style="font-family: 'Jost', sans-serif;">
-    {% extends 'base.html'%}
-    {% load ratings %}
-    {%block content%}
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-sm">
-                <div class="view view-cascade overlay">
-                    <img class="img-fluid" src="{{hostels.image.url}}" alt="Card image cap">
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm">
-                <!-- Card content -->
-                <div class="card-body card-body-cascade text-center">
+{% load ratings %}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
 
-                    <!-- Title -->
-                    <h4 class="card-title"><strong>{{hostels.name}}</strong></h4>
-                    <!-- Subtitle -->
-                    <h6 class="font-weight-bold indigo-text py-2">Description</h6>
-                    <!-- Text -->
-                    <p class="card-text">{{hostels.description}}
-                    </p>
-                   
-                    <h5 style="padding-left: 120%;" class="text-secondary">By: {{hostel.user}}</h5>
-                </div>
-            </div>
-        </div>
-        <iv class="ratings">
-            <h3 class="pt-3 h2">Rate</h3>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="class" style="font-family: 'Jost', sans-serif; background-color: #c6c6d1;">
+
+
+        <div class="container mt-5">
             <div class="row">
                 <div class="col-sm">
-                    <h4>Usability</h4>
-                    {% ratings hostels %}
+                    <div class="view view-cascade overlay">
+                        <img class="img-fluid" src="{{hostels.image.url}}" alt="Card image cap">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center">
 
-                </div>
-                <div class="col-sm">
-                    <h4>Design</h4>
-                    {% ratings hostels %}
-                </div>
-                <div class="col-sm">
-                    <h4>Content</h4>
-                    {% ratings hostels %}
-                    
+                        <!-- Title -->
+                        <h4 class="card-title"><strong>{{hostels.name}}</strong></h4>
+                        <!-- Subtitle -->
+                        <h5 class="card-title"><strong>Location: {{hostels.location}}</strong></h5>
+                        <h6 class="font-weight-bold indigo-text py-2">Description</h6>
+                        <!-- Text -->
+                        <p class="card-text">{{hostels.description}}
+                        </p>
+
+                        <a href="#">
+                            <button> <a href="{% url 'login' %}">Book Now!</a> </button>
+                        </a>
+
+                    </div>
                 </div>
             </div>
-            <a href="#" class="h1">Review</a>
-    </div>
-    <div>
-        {%endblock%}
-    </div>
+            <hr>
+            <div class="ratings">
+                <h3 class="pt-3 h2">
+                    <bold> Reviews</bold>
+                </h3>
+                <br>
+                <div class="row">
+                    <div class="col-sm">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Add Review</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                            
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                {%endblock%}
+            </div>
+</body>
+
+</html>

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     'hostels',
     'crispy_forms',
-     'star_ratings',
+    'star_ratings',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +80,10 @@ WSGI_APPLICATION = 'dulce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dulce',
+        'USER': 'moringa',
+        'PASSWORD': 'Access',
     }
 }
 

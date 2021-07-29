@@ -2,6 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+    
 }
 .form-text, .asteriskField{
     display:none;
@@ -15,7 +16,7 @@ body {
 }
 .navbar {
     padding: 20px 10px;
-    background-color: #35495e;
+    background-color: #142130;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
