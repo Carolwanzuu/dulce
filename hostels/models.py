@@ -1,6 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+GENDER_CHOICES=(
+    ('All','All'),
+    ('Male','Male'),
+    ('Female','Female')
+)
 # Create your models here.
 class Profile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE)
@@ -14,6 +19,11 @@ class Hostels(models.Model):
     description=models.TextField()
     location=models.CharField(max_length=200)
     image=models.ImageField()
+    gender=models.CharField(max_length=100, choices=GENDER_CHOICES)
+    price=models.IntegerField()
+    requirements=models.TextField()
+    rooms=models.CharField(max_length=100)
+    amenities=models.CharField(max_length=200)
 
 class Post(models.Model):
     title = models.CharField(max_length=120, null=True)

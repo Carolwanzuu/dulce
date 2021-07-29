@@ -1,21 +1,50 @@
-{% extends "base.html" %}
+
 {% load crispy_forms_tags %}
-{% block content %}
-<div class="content-section">
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">
-                Log in
-            </legend>
-            {{form|crispy}}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit"> <a href="{% url 'profile' %}"> Login </a></button>
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="class" style="font-family: 'Jost', sans-serif; background-color: #c6c6d1;">
+
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Log in
+                </legend>
+                {{form|crispy}}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit"> <a href="{% url 'profile' %}"> Login </a></button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">Do you need an Account? <a class="ml-2" href="{% url 'signup' %}">Sign Up Now</a></small>
         </div>
-    </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">Do you need an Account? <a class="ml-2" href="{% url 'signup' %}">Sign Up Now</a></small>
     </div>
-</div>
-{% endblock content %}
+    <div>
+        {%endblock%}
+    </div>
+</body>
+
+</html>
