@@ -18,12 +18,12 @@ class Hostels(models.Model):
     name=models.CharField(max_length=200)
     description=models.TextField()
     location=models.CharField(max_length=200)
-    image=models.ImageField()
-    gender=models.CharField(max_length=100, choices=GENDER_CHOICES)
-    price=models.IntegerField()
-    requirements=models.TextField()
-    rooms=models.CharField(max_length=100)
-    amenities=models.CharField(max_length=200)
+    image=models.ImageField(blank=True)
+    gender=models.CharField(max_length=100, choices=GENDER_CHOICES, blank=True)
+    price=models.IntegerField(null=True)
+    requirements=models.TextField(blank=True)
+    rooms=models.CharField(max_length=100, blank=True)
+    amenities=models.CharField(max_length=200, null=True)
 
 class Post(models.Model):
     title = models.CharField(max_length=120, null=True)
