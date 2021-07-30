@@ -12,7 +12,7 @@ urlpatterns=[
     path('hostel/<int:id>',views.hostels,name = 'hostel'),
     path('profile/',views.profile,name = 'profile'),
     path('editprofile/',views.edit_Profile,name = 'editprofile'),
-    path('book_hostel/', views.book_hostel, name='book'),
+    path('book_hostel/', views.book_hostel, name='book_hostel'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

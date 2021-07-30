@@ -2,36 +2,6 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<!-- <div class="container" style="margin-top:7%;">
-    <div class="row">
-        <div class="col-md-7" style="margin-top:10px">
-            <div class="media-body">
-                <img class="rounded-circle" style=" height: 165px; width: 165px;" src="{{ user.profilePic.url }}" alt=""
-                    style="float : left;">
-                <div class="details" style="float:right;">
-                    <div class="profile d-flex justify-content-around">
-                        <h5 style="margin-right: 20px; margin-left: 20px;">{{ user.username}}</h5>
-                        <div>
-                        <a href="{% url 'editprofile' %}">
-                            <button class="btn btn-primary text-center">Edit Profile</button>
-                        </a>
-                        </div>
-
-                        <br>
-                        <div>
-                        <a href="{% url 'editprofile' %}">
-                            <button class="btn btn-primary text-center">Book A Hostel</button>
-                        </a>
-                    </div>
-                    </div>
-
-                    <p style="margin-left: 20px;">{{ user.profile.bio}}</p>
-                </div>
-                <p style="margin-left: 20px;">{{ user.profile.contact}}</p>
-            </div>
-
-        </div>
-    </div> -->
 <div class="container" style="font-family: 'Jost', sans-serif;">
     <div class="row mt-5" style="padding-top: 80px;">
         <div class="col-sm-6 m-auto card">
@@ -41,12 +11,12 @@
                     {%csrf_token%}
                     <fieldset class="form-group">
                         <img class="rounded-circle account-img d-block mx-auto img-fluid"
-                            src="{{user.profilePic.url}}">
+                            src="{{user.profile.profilePic.url}}">
                         <h5 class="text-center mt-3">Username: {{user.username}}</h5>
 
                         <p class="text-center">Bio:{{user.profile.bio}}</p>
-                        <p class="text-center">Contact: {{user.profile.location}}</p>
-                        <p class="text-center">Contact: {{user.profile.neighborhood}}</p>
+                        <p class="text-center">Contact: {{user.profile.contact}}</p>
+                        
                         <legend class="border-bottom pt-4 mb-4">Profile</legend>
 
                     </fieldset>
@@ -57,7 +27,7 @@
                     <br>
                     <hr>
                     <div>
-                        <a href="{% url 'book' %}">
+                        <a href="{% url 'book_hostel' %}">
                             <button class="btn btn-outline-info text-center" type="submit">Book A Hostel</button>
                         </a>
                     </div>

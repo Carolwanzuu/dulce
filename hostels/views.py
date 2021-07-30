@@ -45,7 +45,7 @@ def edit_Profile(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            return redirect('profile', user.id)
+            return render(request, 'editprofile.html')
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = UpdateProfileForm()
