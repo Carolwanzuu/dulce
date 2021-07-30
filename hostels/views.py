@@ -1,6 +1,10 @@
-from hostels.models import Hostels
+from django.http.response import HttpResponseRedirect
+from hostels.emails import send_welcome_email
+from hostels.models import HostelNewsRecipients, Hostels
 from hostels.forms import HostelForm, RegistrationForm, UpdateProfileForm, UserUpdateForm, profileForm
 from django.shortcuts import render,redirect
+
+
 
 # Create your views here.
 def home(request):
@@ -66,3 +70,18 @@ def book_hostel(request):
     else:
         form = HostelForm()
         return render(request, 'book.html', {'form': form})
+
+def news_today(request):
+    if request.method == 'POST':
+        form = HostelForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['your_name']
+            email = form.cleaned_data['email']
+
+            recipient = HostelNewsRecipients(name = name,email =email)
+            recipient.save()
+            send_welcome_email(name,email)
+
+            HttpResponseRedirect('hostels')
+            #.................
+    return render(request, 'hostel.html', {"letterForm":form})

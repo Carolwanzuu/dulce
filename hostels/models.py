@@ -30,4 +30,8 @@ class Post(models.Model):
     post = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='post_owner')
-    hood = models.ForeignKey(Hostels, on_delete=models.CASCADE, related_name='hood_post')
+    
+
+class HostelNewsRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()

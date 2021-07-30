@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to Dulce Dream Hostels. You will find the most comfortable and secure hostels close to your college.
